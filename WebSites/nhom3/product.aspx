@@ -10,37 +10,6 @@
          </div>
          <div id="content">
             <div class="line">
-                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="SqlDataSource1">
-                    <Columns>
-                        <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                        <asp:BoundField DataField="ten" HeaderText="ten" SortExpression="ten" />
-                        <asp:BoundField DataField="id" HeaderText="id" ReadOnly="True" SortExpression="id" />
-                        <asp:BoundField DataField="gia" HeaderText="gia" SortExpression="gia" />
-                        <asp:BoundField DataField="soluong" HeaderText="soluong" SortExpression="soluong" />
-                        <asp:BoundField DataField="loaihang_id" HeaderText="loaihang_id" SortExpression="loaihang_id" />
-                    </Columns>
-                </asp:GridView>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:banhangConnectionString2 %>" DeleteCommand="DELETE FROM [Sanpham] WHERE [id] = @id" InsertCommand="INSERT INTO [Sanpham] ([ten], [id], [gia], [soluong], [loaihang_id]) VALUES (@ten, @id, @gia, @soluong, @loaihang_id)" SelectCommand="SELECT [ten], [id], [gia], [soluong], [loaihang_id] FROM [Sanpham]" UpdateCommand="UPDATE [Sanpham] SET [ten] = @ten, [gia] = @gia, [soluong] = @soluong, [loaihang_id] = @loaihang_id WHERE [id] = @id">
-                    <DeleteParameters>
-                        <asp:Parameter Name="id" Type="String" />
-                    </DeleteParameters>
-                    <InsertParameters>
-                        <asp:Parameter Name="ten" Type="String" />
-                        <asp:Parameter Name="id" Type="String" />
-                        <asp:Parameter Name="gia" Type="Int32" />
-                        <asp:Parameter Name="soluong" Type="Int32" />
-                        <asp:Parameter Name="loaihang_id" Type="String" />
-                    </InsertParameters>
-                    <UpdateParameters>
-                        <asp:Parameter Name="ten" Type="String" />
-                        <asp:Parameter Name="gia" Type="Int32" />
-                        <asp:Parameter Name="soluong" Type="Int32" />
-                        <asp:Parameter Name="loaihang_id" Type="String" />
-                        <asp:Parameter Name="id" Type="String" />
-                    </UpdateParameters>
-                </asp:SqlDataSource>
-                <br />
-
                 <asp:FormView ID="FormView1" runat="server" DataKeyNames="id" DataSourceID="SqlDataSource2">
                     <EditItemTemplate>
                         id:
@@ -104,6 +73,52 @@
                         <asp:Parameter Name="id" Type="String" />
                     </UpdateParameters>
                 </asp:SqlDataSource>
+                <asp:Panel ID="Panel1" runat="server">
+                    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource1" GridLines="Horizontal">
+                        <Columns>
+                            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                            <asp:BoundField DataField="id" HeaderText="id" ReadOnly="True" SortExpression="id" />
+                            <asp:BoundField DataField="ten" HeaderText="ten" SortExpression="ten" />
+                            <asp:BoundField DataField="gia" HeaderText="gia" SortExpression="gia" />
+                            <asp:BoundField DataField="soluong" HeaderText="soluong" SortExpression="soluong" />
+                            <asp:BoundField DataField="loaihang_id" HeaderText="loaihang_id" SortExpression="loaihang_id" />
+                        </Columns>
+                        <FooterStyle BackColor="White" ForeColor="#333333" />
+                        <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#336666" ForeColor="White" HorizontalAlign="Center" />
+                        <RowStyle BackColor="White" ForeColor="#333333" />
+                        <SelectedRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
+                        <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                        <SortedAscendingHeaderStyle BackColor="#487575" />
+                        <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                        <SortedDescendingHeaderStyle BackColor="#275353" />
+                    </asp:GridView>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:banhangConnectionString2 %>" DeleteCommand="DELETE FROM [Sanpham] WHERE [id] = @id" InsertCommand="INSERT INTO [Sanpham] ([id], [ten], [gia], [soluong], [loaihang_id]) VALUES (@id, @ten, @gia, @soluong, @loaihang_id)" SelectCommand="SELECT [id], [ten], [gia], [soluong], [loaihang_id] FROM [Sanpham]" UpdateCommand="UPDATE [Sanpham] SET [ten] = @ten, [gia] = @gia, [soluong] = @soluong, [loaihang_id] = @loaihang_id WHERE [id] = @id">
+                        <DeleteParameters>
+                            <asp:Parameter Name="id" Type="String" />
+                        </DeleteParameters>
+                        <InsertParameters>
+                            <asp:Parameter Name="id" Type="String" />
+                            <asp:Parameter Name="ten" Type="String" />
+                            <asp:Parameter Name="gia" Type="Int32" />
+                            <asp:Parameter Name="soluong" Type="Int32" />
+                            <asp:Parameter Name="loaihang_id" Type="String" />
+                        </InsertParameters>
+                        <UpdateParameters>
+                            <asp:Parameter Name="ten" Type="String" />
+                            <asp:Parameter Name="gia" Type="Int32" />
+                            <asp:Parameter Name="soluong" Type="Int32" />
+                            <asp:Parameter Name="loaihang_id" Type="String" />
+                            <asp:Parameter Name="id" Type="String" />
+                        </UpdateParameters>
+                    </asp:SqlDataSource>
+                </asp:Panel>
+                <br />
+
+                
+                
+
+                <br />
 
             </div>
          </div>
