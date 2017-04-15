@@ -4,9 +4,6 @@
     <form id="form1" runat="server">
     <section>
          <div id="head">
-            <div class="line">
-               <h1>Example of contact page</h1>
-            </div>
          </div>
          <div id="content" class="left-align contact-page">
             <div class="line">
